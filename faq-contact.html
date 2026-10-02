@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXT LEVEL — الأسئلة الشائعة والتواصل واللوكيشن</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .star-rating { display: flex; flex-direction: row-reverse; justify-content: center; gap: 10px; font-size: 2rem; margin: 15px 0; }
+        .star-rating input { display: none; }
+        .star-rating label { color: #444; cursor: pointer; transition: 0.2s; }
+        .star-rating label:hover, .star-rating label:hover ~ label, .star-rating input:checked ~ label { color: #ffd700; }
+    </style>
+</head>
+<body>
+
+    <header class="top-nav">
+        <div class="logo">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>NEXT LEVEL</span> <small>GAMING</small>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية والولاء</a>
+            <a href="menu.html"><i class="fa-solid fa-utensils"></i> المنيو والكافيه</a>
+            <a href="activities.html"><i class="fa-solid fa-trophy"></i> الصالات والعروض</a>
+            <a href="faq-contact.html" class="active"><i class="fa-solid fa-circle-question"></i> الأسئلة والتواصل</a>
+        </nav>
+    </header>
+
+    <main class="page-wrapper" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+
+        <!-- الأسئلة الشائعة -->
+        <section style="margin-bottom: 50px;">
+            <h1 style="color: #fff; text-align: center; margin-bottom: 30px;"><i class="fa-solid fa-circle-question" style="color: #00f0ff;"></i> الأسئلة المتكررة الشاملة</h1>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px; max-width: 900px; margin: 0 auto;">
+                <details style="background: #151824; padding: 18px 20px; border-radius: 12px; border: 1px solid #333; cursor: pointer;">
+                    <summary style="font-weight: 700; color: #00f0ff;">كيف يعمل نظام زيارات الولاء وأكواد الدعوة؟</summary>
+                    <p style="margin-top: 10px; color: #aaa;">عند كل زيارة تقوم بمسح الكود الموجود على الطاولة وادخال رقم هاتفك. عند الوصول للزيارة رقم 5 ستحصل على ساعة لعب مجانية مع مشروب. وإذا استخدم صديق كود الدعوة الخاص بك تحصل أنت وهو على زيارة مجانية مباشرة!</p>
+                </details>
+
+                <details style="background: #151824; padding: 18px 20px; border-radius: 12px; border: 1px solid #333; cursor: pointer;">
+                    <summary style="font-weight: 700; color: #00f0ff;">هل يُشترط الحجز المسبق للغرف الخاصة VIP؟</summary>
+                    <p style="margin-top: 10px; color: #aaa;">يمكنك الدخول مباشرة إذا كانت الغرف متوفرة، ولكن نوصي بالحجز المسبق في عطلة نهاية الأسبوع وأوقات الذروة لضمان التوفر عبر الواتساب مباشرة.</p>
+                </details>
+
+                <details style="background: #151824; padding: 18px 20px; border-radius: 12px; border: 1px solid #333; cursor: pointer;">
+                    <summary style="font-weight: 700; color: #00f0ff;">ما هي الألعاب المتوفرة على أجهزة PS5؟</summary>
+                    <p style="margin-top: 10px; color: #aaa;">نوفر أحدث الألعاب المحدثة مثل: EA FC 24 / FC 25, GTA V, Tekken 8, Mortal Kombat 1, Call of Duty, Rocket League, UFC 5 وغيرها الكثير.</p>
+                </details>
+
+                <details style="background: #151824; padding: 18px 20px; border-radius: 12px; border: 1px solid #333; cursor: pointer;">
+                    <summary style="font-weight: 700; color: #00f0ff;">هل يوجد أماكن مخصصة للعائلات أو غير التدخين؟</summary>
+                    <p style="margin-top: 10px; color: #aaa;">نعم، نوفر غرف VIP خاصة ومغلقة بالكامل مجهزة بنظام تهوية مخصص وجلسات مريحة للمجموعات والعائلات.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- التقييم بالنجوم -->
+        <section style="margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <h2 style="color: #fff; text-align: center; margin-bottom: 20px;"><i class="fa-solid fa-star" style="color: #ffd700;"></i> قيم تجربتك معنا اليوم</h2>
+            <div style="background: #151824; padding: 25px; border-radius: 20px; border: 1px solid #333; text-align: center;">
+                <p style="color: #ccc;">حدد عدد النجوم واكتب انطباعك عن الصالة:</p>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5"><label for="star5" class="fa-solid fa-star"></label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4" class="fa-solid fa-star"></label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3" class="fa-solid fa-star"></label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2" class="fa-solid fa-star"></label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1" class="fa-solid fa-star"></label>
+                </div>
+                <textarea id="feedback-text" rows="3" placeholder="اكتب اقتراحك أو ملاحظتك هنا..." style="width: 100%; padding: 12px; border-radius: 10px; background: #0a0c12; border: 1px solid #333; color: #fff; margin-top: 10px;"></textarea>
+                <button onclick="submitStarFeedback()" class="btn-primary" style="margin-top: 15px; width: 100%; cursor: pointer;">إرسال التقييم</button>
+            </div>
+        </section>
+
+        <!-- خريطة الموقع واللوكيشن المباشر Google Maps -->
+        <section style="max-width: 1000px; margin: 0 auto; background: #151824; padding: 30px; border-radius: 20px; border: 1px solid #333;">
+            <h2 style="color: #fff; margin-bottom: 20px;"><i class="fa-solid fa-map-location-dot" style="color: #ff007f;"></i> موقعنا الخريطة (Google Maps)</h2>
+            <p style="color: #aaa; margin-bottom: 15px;"><i class="fa-solid fa-location-dot" style="color: #ff007f;"></i> الزرقاء - المملكة الأردنية الهاشمية (قرب المجمع الجديد)</p>
+            
+            <div style="width: 100%; height: 350px; border-radius: 16px; overflow: hidden; border: 1px solid #00f0ff; margin-bottom: 20px;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108152.02983794103!2d36.0354171!3d32.0620241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b6fe5821f582f%3A0xa6beae8252a13809!2sZarqa%2C%20Jordan!5e0!3m2!1sen!2sjo!4v1700000000000!5m2!1sen!2sjo" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="https://maps.google.com/?q=Zarqa,Jordan" target="_blank" style="background: #00f0ff; color: #000; padding: 12px 25px; border-radius: 10px; font-weight: 800; text-decoration: none;"><i class="fa-solid fa-directions"></i> فتح عبر تطبيق Google Maps</a>
+                <a href="https://wa.me/962793304039?text=أرسل_لي_اللوكيشن_من_فضلك" target="_blank" style="background: #25d366; color: #fff; padding: 12px 25px; border-radius: 10px; font-weight: 800; text-decoration: none;"><i class="fa-brands fa-whatsapp"></i> طلب اللوكيشن عبر الواتساب</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="background: rgba(10, 11, 16, 0.98); border-top: 2px solid #333; padding: 30px 20px; text-align: center; margin-top: 50px; color: #aaa;">
+        <h3 style="color: #fff; margin-bottom: 15px;">تواصل معنا عبر منصاتنا الرسمية</h3>
+        <div style="display: flex; justify-content: center; gap: 25px; font-size: 2rem; margin-bottom: 20px;">
+            <a href="https://wa.me/962793304039?text=أهلاً_Next_Level" target="_blank" style="color: #25d366;"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://facebook.com" target="_blank" style="color: #00f0ff;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" style="color: #ff007f;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" style="color: #fff;"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <p>© 2026 NEXT LEVEL GAMING — جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        function submitStarFeedback() {
+            const selectedStar = document.querySelector('input[name="rating"]:checked');
+            const feedbackText = document.getElementById('feedback-text').value.trim();
+
+            if(!selectedStar) { alert('يرجى اختيار عدد النجوم للتقييم'); return; }
+
+            let feedbacks = JSON.parse(localStorage.getItem('nextlevel_feedbacks')) || [];
+            feedbacks.push({
+                stars: selectedStar.value,
+                text: feedbackText || 'بدون ملاحظة نصية',
+                date: new Date().toLocaleDateString('ar-EG')
+            });
+
+            localStorage.setItem('nextlevel_feedbacks', JSON.stringify(feedbacks));
+            alert('شكراً لك! تم استلام تقييمك بنجاح ❤️');
+            document.getElementById('feedback-text').value = '';
+        }
+    </script>
+</body>
+</html>

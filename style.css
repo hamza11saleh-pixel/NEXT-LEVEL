@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+
+:root {
+    --bg-dark: #0a0b10;
+    --card-bg: rgba(18, 20, 29, 0.75);
+    --border-color: rgba(0, 242, 254, 0.15);
+    --accent-blue: #00f2fe;
+    --accent-purple: #9d4edd;
+    --accent-pink: #ff007f;
+    --text-white: #ffffff;
+    --text-dim: #a0a5c0;
+    --gold: #ffd700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(157, 78, 221, 0.08) 0%, transparent 40%);
+    color: var(--text-white);
+    min-height: 100vh;
+    direction: rtl;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(10, 11, 16, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-white);
+    letter-spacing: 1px;
+}
+
+.logo i {
+    color: var(--accent-blue);
+    filter: drop-shadow(0 0 8px var(--accent-blue));
+}
+
+.logo small {
+    font-size: 0.8rem;
+    color: var(--accent-pink);
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+    text-shadow: 0 0 10px var(--accent-blue);
+}
+
+/* News Ticker (شريط العروض المتحرك) */
+.ticker-bar {
+    background: linear-gradient(90deg, rgba(157, 78, 221, 0.2), rgba(0, 242, 254, 0.2));
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Hero & Main Layout */
+.page-wrapper {
+    max-width: 1250px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--text-white), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+.hall-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid var(--accent-blue);
+    border-radius: 50px;
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+/* Cards & Section Design */
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-right: 4px solid var(--accent-pink);
+    padding-right: 15px;
+}
+
+.section-title i {
+    color: var(--accent-pink);
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.activity-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.activity-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 12px 25px rgba(0, 242, 254, 0.15);
+}
+
+.activity-box:hover::before {
+    opacity: 1;
+}
+
+.activity-box .box-icon {
+    font-size: 2.2rem;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+}
+
+.activity-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.price-list {
+    list-style: none;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    color: var(--text-dim);
+}
+
+.price-list li strong {
+    color: var(--accent-blue);
+}
+
+/* Cafe & Menu Section */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.menu-category {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.menu-category h4 {
+    font-size: 1.3rem;
+    color: var(--accent-purple);
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(157, 78, 221, 0.3);
+    padding-bottom: 8px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.menu-item .price {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* User & Loyalty Section */
+.loyalty-card {
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.2), rgba(18, 20, 29, 0.9));
+    border: 1px solid var(--accent-purple);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+    margin: 20px auto 0;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 18px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue), #00a8ff);
+    color: #000;
+    font-weight: 800;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+}
+
+.hidden {
+    display: none !important;
+}
+/* ==========================================
+   تنسيقات التجاوب مع شاشات التلفون والأجهزة الذكية
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* ضبط مساحات الصفحة الخارجية */
+    .page-wrapper {
+        margin: 1rem auto;
+        padding: 0 10px;
+        gap: 1.5rem;
+    }
+
+    /* ضبط الهيدر والقائمة التعلية بالتلفون */
+    .top-nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 1rem 3%;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 12px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+    }
+
+    /* ضبط العناوين وشاشات الهيرو */
+    .hero-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    /* تحويل الشبكات الكبيرة إلى عمود واحد مريح للعين */
+    .activities-grid, 
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* ضبط النماذج والمدخلات بالتلفون */
+    .login-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    input[type="text"], 
+    input[type="tel"], 
+    textarea {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* ضبط كود الدعوة والعدادات */
+    #dashboard-section div[style*="flex"] {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
